@@ -15,19 +15,22 @@ namespace Практика_с_циклами
             string passvord = "7788";
             string userInput;
 
-            for(int i = 0; i < tryCount; i++)
+            for (int i = 0; i < tryCount; i++)
             {
                 Console.WriteLine("Введите пароль:");
                 userInput = Console.ReadLine();
 
-                if(passvord == userInput)
+                int remainingAttempts = tryCount - i - 1;
+
+                if (passvord == userInput)
                 {
                     Console.WriteLine("Пароль верный. Вы узнали все секреты мира!");
                     break;
                 }
+
                 else
                 {
-                    Console.WriteLine("Пароль не верный, у вас осталось " + (tryCount - i - 1) + " попыток.");
+                    Console.WriteLine("Пароль не верный, у вас осталось " + (remainingAttempts) + " попыток.");
                 }
             }
         }
